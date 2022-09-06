@@ -1,6 +1,7 @@
 package com.blueland.secretdiary
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.widget.Toast
@@ -52,7 +53,7 @@ class MainActivity : AppCompatActivity() {
                 val passwordFromUser = "${numberPicker0.value}${numberPicker1.value}${numberPicker2.value}"
 
                 if (passwordPreferences.getString("password", "000").equals(passwordFromUser)) {
-                    // TODO 다이어리 페이지 작성 후 Intent
+                    startActivity(Intent(this@MainActivity, DiaryActivity::class.java))
                 } else {
                     showErrorAlertDialog()
                 }
